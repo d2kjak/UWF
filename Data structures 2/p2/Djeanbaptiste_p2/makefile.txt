@@ -1,0 +1,12 @@
+edit : poissonDistribution.o priorityQueueHeap.o linkedQueue.o events.o
+	gcc -o edit poissonDistribution.o priorityQueueHeap.o linkedQueue.o events.o -lm 
+linkedQueue.o : linkedQueue.c linkedQueue.h
+	gcc -c -Wall linkedQueue.c
+poissonDistribution.o : poissonDistribution.c linkedQueue.h priorityQueueHeap.h events.h
+	gcc -c -Wall poissonDistribution.c
+priorityQueueHeap.o : priorityQueueHeap.c priorityQueueHeap.h linkedQueue.h
+	gcc -c -Wall priorityQueueHeap.c
+events.o : events.c events.h priorityQueueHeap.h linkedQueue.h
+	gcc -c -Wall events.c
+clean :
+	rm edit poissonDistribution.o linkedQueue.o priorityQueueHeap.o events.o 

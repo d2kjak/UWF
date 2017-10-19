@@ -1,0 +1,139 @@
+/*
+ * File:   Project7.c
+ * Author: Delikarl Jean-baptiste
+ *
+ * Created on April 15, 2015, 5:53 PM
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define sLength 30
+
+/*
+ *
+ */
+int main(int argc, char** argv) {
+
+    //char str[30];
+    //FILE *file;
+    //file = fopen("");
+
+    FILE *in;
+    char buffer[sLength + 1];
+    char inFile[40];
+   // char outFile[40];
+   
+    
+      printf("Enter your input file name : ");
+      scanf("%s", inFile);
+      
+      if((in = fopen(inFile, "r")) == NULL){
+          fprintf(stderr, "in file error");
+          exit(1);
+      }
+      
+      fgets(buffer, sLength, in);
+      while( ! feof(in) ){
+          printf(" - %s", buffer);
+          fgets(buffer, sLength, in);
+      }
+      fclose(in);
+     
+/*
+    char string1Holder[11][30] = {"Alex", "Don", "Ellen", "Jacob", "Joe", "Sue", "Tom", "0"};
+    char string2Holder[11][30] = {"Alexis", "Allen", "Emma", "Jacob", "Tom", "Tommy", "Thomas", "Wesley", "Zachary", "0"};
+    char string1[30];
+    char string2[30];
+    int c1 = 0;
+    int c2 = 0;
+    int count1 = 0;
+    int count2 = 0;
+    int i;
+    int done = -1;
+
+    strncpy(string1, string1Holder[c1], 30);
+    strncpy(string2, string2Holder[c2], 30);
+
+    //strcpy(string1, string1Holder[c1]);
+    //strcpy(string2, string2Holder[c2]);
+
+    while (string1[count1] != '0' && string2[count2] != '0') {
+        while (string1[count1] != '\0' && string2[count2] != '\0' && done < 0) {
+            if (string1[count1] == string2[count2]) {
+                count1++;
+                count2++;
+            }
+                //ask if it is going to be case sensitive
+            else if (string1[count1] < string2[count2]) {
+                done = 1;
+                //done = 1 for string1 goes first
+                //done = 2 for string2 goes first
+            } else {
+                done = 2;
+            }
+
+        }
+        if (done == 1) {
+            c1++;
+            printf("[%s]\n", string1);
+            strncpy(string1, string1Holder[c1], 30);
+            //strcpy(string1, string1Holder[c1]);
+        } else if (done == 2) {
+            c2++;
+            printf("[%s]\n", string2);
+            strncpy(string2, string2Holder[c2], 30);
+            //strcpy(string2, string2Holder[c2]);
+        } else {
+            if (string1[count1] == '\0') {
+                c1++;
+                printf("[%s]\n", string1);
+                strncpy(string1, string1Holder[c1], 30);
+                //strcpy(string1, string1Holder[c1]);
+            } else {
+                c2++;
+                printf("[%s]\n", string2);
+                strncpy(string2, string2Holder[c2], 30);
+                //strcpy(string2, string2Holder[c2]);
+            }
+        }
+        //printf("c1 = %d c2 = %d\n", c1, c2);
+        count1 = 0;
+        count2 = 0;
+        done = -1;
+    }
+    
+    //while(!feof(file1)
+    
+    while(string1[count1] != '0')
+    {
+        printf("[%s]\n", string1);
+        c1++;
+        strcpy(string1, string1Holder[c1]);
+    }
+    
+    while(string2[count2] != '0')
+    {
+        printf("[%s]\n", string2);
+        c2++;
+        strcpy(string2, string2Holder[c2]);
+    }
+    
+    /*
+    while (strcmp(string1Holder[c1],"0") != 0) {
+        strncpy(string1, string1Holder[c1], 30);
+        printf("[%s]\n", string1);
+        c1++;
+    }
+
+    while (strcmp(string2Holder[c2],"0") != 0) {
+        strncpy(string2, string2Holder[c2], 30);
+        printf("[%s]\n", string2);
+        c2++;
+    }
+*/
+
+    return (EXIT_SUCCESS);
+}
+

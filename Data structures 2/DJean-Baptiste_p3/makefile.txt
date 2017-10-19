@@ -1,0 +1,6 @@
+edit : TSP.o
+	gcc -o edit TSP.o -lm 
+TSP.o : TSP.c
+	gcc -c -Wall TSP.c
+clean :
+	rm edit TSP.o

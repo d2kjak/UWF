@@ -1,0 +1,22 @@
+    public void run(){
+        while(hr.racing){
+            
+            try{
+                hr.sLock.lock();
+                xPos += r.nextInt(12);
+                hr.repaint();
+                if(xPos>650){
+                    hr.racing = false;
+                    JOptionPane.showMessageDialog(new JFrame(), "Winner is horse number " + getHorseID());
+                    
+                }
+                Thread.sleep(30);
+            }
+            catch (InterruptedException e) {
+             System.out.println("Thread generates an error.");
+            }
+            finally{
+            hr.sLock.unlock();
+            }
+        }
+    }

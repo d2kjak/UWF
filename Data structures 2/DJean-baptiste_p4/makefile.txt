@@ -1,0 +1,6 @@
+edit : BinPacking.o
+	gcc -o edit BinPacking.o -lm 
+TSP.o : BinPacking.c
+	gcc -c -Wall BinPacking.c
+clean :
+	rm edit BinPacking.o

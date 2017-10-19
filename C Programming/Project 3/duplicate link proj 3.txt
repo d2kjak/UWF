@@ -1,0 +1,7 @@
+http://www.c4learn.com/c-programs/to-delete-duplicate-elements-in-array.html
+
+http://www.studytonight.com/c/remove-duplicate-element-program.php
+
+http://cboard.cprogramming.com/c-programming/160118-removing-duplicate-elements-array.html
+
+http://stackoverflow.com/questions/9854237/removing-duplicate-values-from-an-array-in-c
